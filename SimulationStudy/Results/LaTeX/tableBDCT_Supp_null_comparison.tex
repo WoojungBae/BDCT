@@ -1,0 +1,27 @@
+\begin{table}[!htbp]
+\centering
+\caption{\label{tableBDCT_Supp_null_comparison}Exact-null and regional FPR for the 12 RMST profile-specific candidate designs selected by FPR-first calibration. FPR is the exact-null value used for threshold calibration, whereas Regional FPR averages false-positive behavior over the prespecified continuous no-efficacy distribution. Entries are percentages.}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{cccccccc}
+\toprule
+\multicolumn{4}{c}{Candidate setting} & \multicolumn{2}{c}{Calibrated thresholds} & \multicolumn{2}{c}{FPR evaluation} \\
+\cmidrule(l{3pt}r{3pt}){1-4} \cmidrule(l{3pt}r{3pt}){5-6} \cmidrule(l{3pt}r{3pt}){7-8}
+Estimand & Model & $K_{2}$ ($N$) & Profile & $\nu_1$ & $\nu_2$ & FPR & Regional FPR\\
+\midrule
+RMST & GP-PH & 420 (700) & Constant & 0.991 & 0.977 & 2.5 & 0.4\\
+ &  &  & Increasing & 0.991 & 0.977 & 2.5 & 0.4\\
+ &  &  & Waning & 0.989 & 0.978 & 2.5 & 0.5\\
+ &  & 600 (1000) & Constant & 0.992 & 0.978 & 2.5 & 0.1\\
+ &  &  & Increasing & 0.994 & 0.977 & 2.5 & 0.1\\
+ &  &  & Waning & 0.992 & 0.978 & 2.5 & 0.1\\
+ & I-GP & 420 (700) & Constant & 0.970 & 0.969 & 2.5 & 0.2\\
+ &  &  & Increasing & 0.970 & 0.969 & 2.5 & 0.2\\
+ &  &  & Waning & 0.970 & 0.969 & 2.5 & 0.2\\
+ &  & 600 (1000) & Constant & 0.971 & 0.970 & 2.5 & 0.1\\
+ &  &  & Increasing & 0.971 & 0.970 & 2.5 & 0.1\\
+ &  &  & Waning & 0.971 & 0.970 & 2.5 & 0.1\\
+\bottomrule
+\end{tabular}}
+\end{table}

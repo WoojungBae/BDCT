@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\caption{\label{tableBDCT_Supp_MCMC_diagnostics}Posterior-sampling diagnostics by analysis model and candidate design. Max. $\widehat{R}$ and Min. ESS are worst-case values across posterior fits. Total is the total number of divergent transitions, and Fits is the percentage of posterior fits containing at least one divergence.}
+\centering
+\begin{tabular}[t]{cccccc}
+\toprule
+\multicolumn{4}{c}{ } & \multicolumn{2}{c}{Divergences} \\
+\cmidrule(l{3pt}r{3pt}){5-6}
+Model & $K_{2}$ ($N$) & Max. $\widehat{R}$ & Min. ESS & Total & Fits (\%)\\
+\midrule
+GP-PH & 420 (700) & 1.004 & 3036 & 8 & 0.1\\
+ & 600 (1000) & 1.005 & 3074 & 9 & 0.2\\
+I-GP & 420 (700) & 1.005 & 3432 & 38 & 0.7\\
+ & 600 (1000) & 1.005 & 3437 & 6 & 0.1\\
+\bottomrule
+\end{tabular}
+\end{table}

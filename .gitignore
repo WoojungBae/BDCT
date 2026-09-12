@@ -1,0 +1,17 @@
+.DS_Store
+.Rproj.user
+.Rhistory
+.Ruserdata
+
+.Rbuildignore
+*.RData
+*.Rproj
+*.o
+*.so
+*.dll
+
+*.zip
+*.eps
+
+SimulationStudy/HPC
+.positai
