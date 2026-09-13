@@ -50,6 +50,25 @@ results_dir <- if (length(existing_results_dirs) > 0L) {
 if (!dir.exists(results_dir)) {
   stop( "Results directory was not found. Checked: ", paste(results_dir_candidates, collapse = "; ") )
 }
+# BDCT source file used by optional Figure 2.
+# Check the actual project source directory first, then older fallbacks.
+bdct_r_candidates <- c(
+  "/Users/woojung/Documents/Rproject/BDCT/source/BDCT_r.R",
+  "/Users/woojung/Documents/Rproject/BDCT/BDCT_r.R",
+  "/Users/woojung/Documents/Rproject/BDCT/SimulationStudy/BDCT_r.R",
+  "/Users/woojung/Documents/Rproject/BDCT_r.R"
+)
+
+bdct_r_existing <- bdct_r_candidates[
+  file.exists(bdct_r_candidates)
+]
+
+bdct_r_file <- if (length(bdct_r_existing) > 0L) {
+  bdct_r_existing[1L]
+} else {
+  NA_character_
+}
+
 # Prespecified design-prior efficacy mixture used for PPV calibration and manuscript predictive summaries.
 ppv_calibration_omega <- 0.5
 
@@ -3286,9 +3305,24 @@ cat("\nOC order:\n  FPR-only: FPR, BP, PPV, NPV\n  PPV+FPR:  PPV, FPR, BP, NPV\n
 # Set `make_figure2 <- TRUE` only when Figure 2 is needed.
 # By default this block does not generate any Figure 2 files.
 # ==============================================================================
-make_figure2 <- FALSE
+make_figure2 <- TRUE
 
 if (isTRUE(make_figure2)) {
+  if (is.na(bdct_r_file) || !file.exists(bdct_r_file)) {
+    stop(
+      "Figure 2 requires `BDCT_r.R`, but it was not found. Checked: ",
+      paste(
+        bdct_r_candidates,
+        collapse = "; "
+      )
+    )
+  }
+  
+  source(
+    bdct_r_file,
+    local = TRUE
+  )
+  
   figure2_PPV <- ppv_calibration_target
   figure2_BP <- c(0.80, 0.90)
   figure2_omega <- seq(0.001, 0.999, by = 0.001)
